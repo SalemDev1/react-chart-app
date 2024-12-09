@@ -6,10 +6,10 @@ const ChartComponent = ({ type, data, options }) => {
 
   useEffect(() => {
     const ctx = chartRef.current.getContext('2d');
-    const chartInstance = new Chart(ctx, { type, data, options });
+    const chartEvent = new Chart(ctx, { type, data, options });
 
     return () => {
-      chartInstance.destroy();
+      chartEvent.destroy();
     };
   }, [type, data, options]);
 
